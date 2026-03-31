@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1 align="center">Student Registration Form</h1>
+
+    <form align="center">
+      <table border="1" cellpadding="10" cellspacing="0" align="center">
+        <tr>
+          <td>Full Name</td>
+          <td>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter your full name"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Password</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Email</td>
+          <td>
+            <input type="email" name="email" placeholder="Enter your email" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Phone Number</td>
+          <td>
+            <input
+              type="number"
+              name="phone"
+              placeholder="Enter phone number"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Date of Birth</td>
+          <td><input type="date" name="dob" /></td>
+        </tr>
+
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" value="Male" /> Male
+            <input type="radio" name="gender" value="Female" /> Female
+            <input type="radio" name="gender" value="Other" /> Other
+          </td>
+        </tr>
+
+        <tr>
+          <td>Languages Known</td>
+          <td>
+            <input type="checkbox" name="lang" value="English" /> English
+            <input type="checkbox" name="lang" value="Telugu" /> Telugu
+            <input type="checkbox" name="lang" value="Hindi" /> Hindi
+            <input type="checkbox" name="lang" value="Tamil" /> Tamil
+          </td>
+        </tr>
+
+        <tr>
+          <td>Course</td>
+          <td>
+            <select name="course">
+              <option value="">--Select Course--</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="B.Sc">B.Sc</option>
+              <option value="B.Com">B.Com</option>
+              <option value="BCA">BCA</option>
+              <option value="MCA">MCA</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Address</td>
+          <td>
+            <textarea
+              name="address"
+              rows="4"
+              cols="30"
+              placeholder="Enter your address"
+            ></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Upload Photo</td>
+          <td><input type="file" name="photo" /></td>
+        </tr>
+
+        <tr>
+          <td>Age</td>
+          <td><input type="range" name="age" min="15" max="40" /></td>
+        </tr>
+
+        <tr>
+          <td>Favorite Color</td>
+          <td><input type="color" name="favcolor" /></td>
+        </tr>
+
+        <tr>
+          <td>Website</td>
+          <td>
+            <input type="url" name="website" placeholder="Enter website URL" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Search</td>
+          <td>
+            <input type="search" name="search" placeholder="Search here" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Registration Time</td>
+          <td><input type="time" name="regtime" /></td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Register" />
+            <input type="reset" value="Clear" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+
+<!--
+  text
+  password
+  email
+  radio 
+  checkbox
+  color
+  date
+  submit
+  reset
+  search
+  time
+  url
+  range
+  file
+-->
