@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS Selectors Demo</title>
+
+    <style>
+      /* ========================= */
+      /* i. SIMPLE SELECTORS       */
+      /* ========================= */
+
+      /* Element selector */
+      h1 {
+        color: blue; /* Property: color | Value: blue */
+      }
+
+      /* ID selector */
+      #main {
+        background-color: lightgray; /* Property: background-color | Value: lightgray */
+        padding: 10px;
+      }
+
+      /* Class selector */
+      .text {
+        color: green; /* Property: color | Value: green */
+      }
+
+      /* Group selector */
+      h2,
+      p {
+        font-family: Arial; /* Property: font-family | Value: Arial */
+      }
+
+      /* Universal selector */
+      * {
+        margin: 5px; /* Property: margin | Value: 5px */
+      }
+
+      /* ========================= */
+      /* ii. COMBINATOR SELECTORS  */
+      /* ========================= */
+
+      /* Descendant selector */
+      div p {
+        color: red; /* All <p> inside <div> */
+      }
+
+      /* Child selector */
+      div > h3 {
+        color: purple; /* Direct child only */
+      }
+
+      /* Adjacent sibling selector */
+      h1 + p {
+        background-color: yellow; /* First <p> after <h1> */
+      }
+
+      /* General sibling selector */
+      h2 ~ p {
+        border: 1px solid black; /* All <p> after <h2> */
+      }
+
+      /* ========================= */
+      /* iii. PSEUDO-CLASS         */
+      /* ========================= */
+
+      a:hover {
+        color: orange; /* Changes when mouse hovers */
+      }
+
+      li:first-child {
+        color: brown; /* First list item */
+      }
+
+      /* ========================= */
+      /* iv. PSEUDO-ELEMENT        */
+      /* ========================= */
+
+      p::first-letter {
+        font-size: 25px;
+        color: red;
+      }
+
+      p::after {
+        content: " ✔";
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Selectors Demonstration</h1>
+
+    <div id="main">
+      <h2>Simple Selectors</h2>
+      <p class="text">This is a paragraph with class selector.</p>
+      <p>This is another paragraph.</p>
+
+      <h3>Child Selector Example</h3>
+      <p>Paragraph inside div.</p>
+    </div>
+
+    <h2>Sibling Selectors</h2>
+    <p>Paragraph 1 after h2</p>
+    <p>Paragraph 2 after h2</p>
+
+    <h1>Adjacent Selector</h1>
+    <p>This paragraph is adjacent to h1.</p>
+    <p>This paragraph is NOT adjacent.</p>
+
+    <h2>Pseudo Class Example</h2>
+    <a href="#">Hover over this link</a>
+
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+    </ul>
+
+    <h2>Pseudo Element Example</h2>
+    <p>This paragraph demonstrates pseudo-elements.</p>
+  </body>
+</html>
