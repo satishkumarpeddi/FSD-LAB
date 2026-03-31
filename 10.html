@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Number Operations</title>
+
+    <script>
+      // i. Factorial Function
+      function factorial(n) {
+        let fact = 1;
+        for (let i = 1; i <= n; i++) {
+          fact *= i;
+        }
+        return fact;
+      }
+
+      // ii. Fibonacci Function
+      function fibonacci(n) {
+        let a = 0,
+          b = 1,
+          series = "0 1 ";
+        for (let i = 2; i < n; i++) {
+          let c = a + b;
+          series += c + " ";
+          a = b;
+          b = c;
+        }
+        return series;
+      }
+
+      // iii. Prime Numbers Function
+      function primes(n) {
+        let result = "";
+        for (let i = 2; i <= n; i++) {
+          let isPrime = true;
+          for (let j = 2; j <= i / 2; j++) {
+            if (i % j === 0) {
+              isPrime = false;
+              break;
+            }
+          }
+          if (isPrime) {
+            result += i + " ";
+          }
+        }
+        return result;
+      }
+
+      // iv. Palindrome Function
+      function isPalindrome(n) {
+        let original = n;
+        let reverse = 0;
+
+        while (n > 0) {
+          let rem = n % 10;
+          reverse = reverse * 10 + rem;
+          n = Math.floor(n / 10);
+        }
+
+        return original === reverse;
+      }
+
+      // Main Function
+      function processNumber() {
+        let num = parseInt(prompt("Enter a number:"));
+
+        let output = "";
+
+        output += "Factorial: " + factorial(num) + "<br>";
+        output += "Fibonacci: " + fibonacci(num) + "<br>";
+        output += "Primes: " + primes(num) + "<br>";
+        output += "Palindrome: " + (isPalindrome(num) ? "Yes" : "No");
+
+        document.getElementById("result").innerHTML = output;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Number Operations</h1>
+
+    <button onclick="processNumber()">Enter Number</button>
+
+    <p id="result"></p>
+  </body>
+</html>
