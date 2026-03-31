@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Window Object Demo</title>
+
+    <script>
+      function showWindowInfo() {
+        // Window properties
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        // Display window size
+        document.getElementById("output").innerHTML =
+          "Window Width: " + width + "<br>" + "Window Height: " + height;
+      }
+
+      function openNewWindow() {
+        // Window method to open a new window
+        window.open("https://www.google.com", "_blank");
+      }
+
+      function showAlert() {
+        // Window method alert
+        window.alert("This is an alert using window object!");
+      }
+
+      function confirmBox() {
+        // Window confirm box
+        let result = window.confirm("Do you want to continue?");
+        document.getElementById("output").innerHTML = "User choice: " + result;
+      }
+
+      function promptBox() {
+        // Window prompt box
+        let name = window.prompt("Enter your name:");
+        document.getElementById("output").innerHTML = "Hello, " + name;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Window Object Demonstration</h1>
+
+    <button onclick="showWindowInfo()">Show Window Size</button><br /><br />
+
+    <button onclick="openNewWindow()">Open New Window</button><br /><br />
+
+    <button onclick="showAlert()">Show Alert</button><br /><br />
+
+    <button onclick="confirmBox()">Confirm Box</button><br /><br />
+
+    <button onclick="promptBox()">Prompt Box</button><br /><br />
+
+    <p id="output"></p>
+  </body>
+</html>
