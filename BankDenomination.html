@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bank Denomination</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 40px;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bank Denomination Calculator</h1>
+
+    <input type="number" id="amount" placeholder="Enter amount" />
+    <br /><br />
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="output"></div>
+
+    <script>
+      function calculate() {
+        let amount = parseInt(document.getElementById("amount").value);
+
+        let notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+        let result = "<table><tr><th>Denomination</th><th>Count</th></tr>";
+
+        for (let i = 0; i < notes.length; i++) {
+          let count = Math.floor(amount / notes[i]);
+          if (count > 0) {
+            result +=
+              "<tr><td>" + notes[i] + "</td><td>" + count + "</td></tr>";
+            amount = amount % notes[i];
+          }
+        }
+
+        result += "</table>";
+        document.getElementById("output").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
