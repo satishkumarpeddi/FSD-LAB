@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 40px;
+      }
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 250px;
+      }
+      button {
+        padding: 10px 20px;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      .success {
+        color: green;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+
+    <form onsubmit="return validateForm();">
+      <input type="text" id="name" placeholder="Enter Name" /><br />
+      <div id="nameError" class="error"></div>
+
+      <input type="text" id="mobile" placeholder="Enter Mobile" /><br />
+      <div id="mobileError" class="error"></div>
+
+      <input type="text" id="email" placeholder="Enter Email" /><br />
+      <div id="emailError" class="error"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let mobile = document.getElementById("mobile").value;
+        let email = document.getElementById("email").value;
+
+        let namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+        let mobilePattern = /^[0-9]{10}$/;
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        let valid = true;
+
+        // Clear previous errors
+        document.getElementById("nameError").innerHTML = "";
+        document.getElementById("mobileError").innerHTML = "";
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+
+        // Name validation
+        if (!namePattern.test(name)) {
+          document.getElementById("nameError").innerHTML =
+            "Name must start with a letter and be at least 6 characters (alphanumeric).";
+          valid = false;
+        }
+
+        // Mobile validation
+        if (!mobilePattern.test(mobile)) {
+          document.getElementById("mobileError").innerHTML =
+            "Mobile must be exactly 10 digits.";
+          valid = false;
+        }
+
+        // Email validation
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerHTML =
+            "Enter a valid email (e.g., abc@xyz.com).";
+          valid = false;
+        }
+
+        if (valid) {
+          document.getElementById("result").innerHTML =
+            "<p class='success'>Registration Successful!</p>";
+        }
+
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
+</html>
