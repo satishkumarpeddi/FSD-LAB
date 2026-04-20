@@ -1,56 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Window Object Demo</title>
+<head>
+    <title>Voter Eligibility Check</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
 
-    <script>
-      function showWindowInfo() {
-        // Window properties
-        let width = window.innerWidth;
-        let height = window.innerHeight;
+<body>
 
-        // Display window size
-        document.getElementById("output").innerHTML =
-          "Window Width: " + width + "<br>" + "Window Height: " + height;
-      }
+<h2>Voter Information</h2>
 
-      function openNewWindow() {
-        // Window method to open a new window
-        window.open("https://www.google.com", "_blank");
-      }
+<button onclick="getVoterInfo()">Enter Voter Details</button>
 
-      function showAlert() {
-        // Window method alert
-        window.alert("This is an alert using window object!");
-      }
+<br><br>
 
-      function confirmBox() {
-        // Window confirm box
-        let result = window.confirm("Do you want to continue?");
-        document.getElementById("output").innerHTML = "User choice: " + result;
-      }
+<table id="voterTable">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Eligibility</th>
+    </tr>
+</table>
 
-      function promptBox() {
-        // Window prompt box
-        let name = window.prompt("Enter your name:");
-        document.getElementById("output").innerHTML = "Hello, " + name;
-      }
-    </script>
-  </head>
+<script>
+function getVoterInfo() {
+    var name = prompt("Enter your name:");
+    var age = prompt("Enter your age:");
 
-  <body>
-    <h1>Window Object Demonstration</h1>
+    age = parseInt(age);
 
-    <button onclick="showWindowInfo()">Show Window Size</button><br /><br />
+    var eligibility;
 
-    <button onclick="openNewWindow()">Open New Window</button><br /><br />
+    if (age >= 18) {
+        eligibility = "Eligible to Vote";
+    } else {
+        eligibility = "Not Eligible";
+    }
 
-    <button onclick="showAlert()">Show Alert</button><br /><br />
+    var table = document.getElementById("voterTable");
+    var row = table.insertRow();
 
-    <button onclick="confirmBox()">Confirm Box</button><br /><br />
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
 
-    <button onclick="promptBox()">Prompt Box</button><br /><br />
+    cell1.innerHTML = name;
+    cell2.innerHTML = age;
+    cell3.innerHTML = eligibility;
+}
+</script>
 
-    <p id="output"></p>
-  </body>
+</body>
 </html>
